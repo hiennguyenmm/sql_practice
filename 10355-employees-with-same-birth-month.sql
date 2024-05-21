@@ -8,17 +8,17 @@ with prebase as (
                 1 AS id
             from
                 employee_list
-        ) AS profes full
+        ) AS profession_table full
         outer join (
             select
                 distinct birth_month,
                 1 AS id
             from
                 employee_list
-        ) as birth using (id)
+        ) as birth_month_table using (id)
     order by
-        profes,
-        birth
+        profession,
+        birth_month
 ),
 base as (
     select
